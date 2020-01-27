@@ -394,7 +394,7 @@ echo -e "  <system>\r
     <name>$name</name>\r
     <fullname>$fullname</fullname>\r
     <path>$path</path>\r
-    <extension>$extension>/extension>\r
+    <extension>$extension</extension>\r
     <command>$command</command>\r
     <platform>$platform</platform>\r
     <theme>$theme</theme>\r
