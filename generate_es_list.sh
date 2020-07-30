@@ -7,7 +7,9 @@
 
 backup_time=$(date +%m-%d-%y_%H-%M) #Custom time used to create es_systems.cfg backup file
 es_restore=no #Set to yes if es_systems backup is created.  Used so script knows if there is a file to restore on error
+full_list='|'
 for LIST in /home/$USER/RetroPie/roms/*; do if [ -d "${LIST}" ]; then if [ ! -L "${LIST}" ]; then full_list="${LIST##*/}|${full_list}";fi; fi; done
+full_list="|${full_list}"
 
 #Set colors for status message
 red='\e[1;31m'
