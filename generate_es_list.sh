@@ -8,7 +8,7 @@
 backup_time=$(date +%m-%d-%y_%H-%M) #Custom time used to create es_systems.cfg backup file
 es_restore=no #Set to yes if es_systems backup is created.  Used so script knows if there is a file to restore on error
 full_list='|'
-for LIST in /home/$USER/RetroPie/roms/*; do if [ -d "${LIST}" ]; then if [ ! -L "${LIST}" ]; then full_list="${LIST##*/}|${full_list}";fi; fi; done
+for LIST in /home/${USER}/RetroPie/roms/*; do if [ -d "${LIST}" ]; then if [ ! -L "${LIST}" ]; then full_list="${LIST##*/}|${full_list}";fi; fi; done
 full_list="|${full_list}"
 
 #Set colors for status message
@@ -21,19 +21,19 @@ clear='\e[0m'
 
 backupES_SYSTEMS(){
   es_restore=yes
-  cp /home/$USER/.emulationstation/es_systems.cfg /home/$USER/.emulationstation/es_systems.cfg.$backup_time.bkp \
-  && echo "Backup \"/home/$USER/.emulationstation/es_systems.cfg.$backup_time.bkp\" created!"
+  cp /home/${USER}/.emulationstation/es_systems.cfg /home/${USER}/.emulationstation/es_systems.cfg.${backup_time}.bkp \
+  && echo "Backup \"/home/${USER}/.emulationstation/es_systems.cfg.${backup_time}.bkp\" created!"
 }
 
 getSYSTEM_LIST(){
   echo -e "\nEnter order and only systems you want to appear in Emulation Station.  Include ${white}retropie${clear} to add the RetroPie menu.\nValid installed systems are:\n"
-  echo -e "${yellow}$(echo $full_list|tr '|' " ")${clear}\n"
+  echo -e "${yellow}$(echo ${full_list}|tr '|' " ")${clear}\n"
   read system_list
 }
 
 confirmSYSTEM_LIST(){
   clear
-  echo -e "Creating custom systems list for ${blue}$system_list${clear}, do you want to proceed?\n[yes|no|quit]"
+  echo -e "Creating custom systems list for ${blue}${system_list}${clear}, do you want to proceed?\n[yes|no|quit]"
   read answer
   getANSWER
 }
@@ -46,7 +46,7 @@ getANSWER(){
      n|N|no|No|NO|q|Q|quit|Quit|QUIT)
           echo -e "No changes have been made and any backups created have been removed."
           echo -e "To run again please enter ${blue}$0${clear} and hit return."
-          rm /home/$USER/.emulationstation/es_systems.cfg.$backup_time.bkp 2&>/dev/null
+          rm /home/${USER}/.emulationstation/es_systems.cfg.${backup_time}.bkp 2&>/dev/null
           exit 0
           ;;
      *)
@@ -59,13 +59,13 @@ getANSWER(){
 
 validateSYSTEM(){
   echo -e "${blue}Validating systems...${clear}"
-  for validate in $(echo $system_list)
+  for validate in $(echo ${system_list})
   do
-    if [[ ! $(echo "$full_list"|grep "|$validate|") ]]
+    if [[ ! $(echo "${full_list}"|grep "|${validate}|") ]]
     then
       clear
-      echo -e "${red}$validate${clear} is an invalid system!  Please re-run ${blue}$0${clear} to try again."
-      rm /home/$USER/.emulationstation/es_systems.cfg.$backup_time.bkp 2&>/dev/null
+      echo -e "${red}${validate}${clear} is an invalid system!  Please re-run ${blue}${0}${clear} to try again."
+      rm /home/${USER}/.emulationstation/es_systems.cfg.${backup_time}.bkp 2&>/dev/null
       exit 0
     fi
   done
@@ -74,7 +74,7 @@ validateSYSTEM(){
 }
 
 systemLINE(){
-case $system in
+case ${system} in
 ags)
  name='ags'
  fullname='Adventure Game Studio'
@@ -85,7 +85,7 @@ ags)
  theme='ags'
 ;;
 
-amstradcpc) 
+amstradcpc)
  name='amstradcpc'
  fullname='Amstrad CPC'
  path='/home/pi/RetroPie/roms/amstradcpc'
@@ -95,7 +95,7 @@ amstradcpc)
  theme='amstradcpc'
 ;;
 
-apple2) 
+apple2)
  name='apple2'
  fullname='Apple II'
  path='/home/pi/RetroPie/roms/apple2'
@@ -105,7 +105,7 @@ apple2)
  theme='apple2'
 ;;
 
-arcade) 
+arcade)
  name='arcade'
  fullname='Arcade'
  path='/home/pi/RetroPie/roms/arcade'
@@ -115,7 +115,7 @@ arcade)
  theme='arcade'
 ;;
 
-atari2600) 
+atari2600)
  name='atari2600'
  fullname='Atari 2600'
  path='/home/pi/RetroPie/roms/atari2600'
@@ -125,7 +125,7 @@ atari2600)
  theme='atari2600'
 ;;
 
-atari5200) 
+atari5200)
  name='atari5200'
  fullname='Atari 5200'
  path='/home/pi/RetroPie/roms/atari5200'
@@ -135,7 +135,7 @@ atari5200)
  theme='atari5200'
 ;;
 
-atari7800) 
+atari7800)
  name='atari7800'
  fullname='Atari 7800 ProSystem'
  path='/home/pi/RetroPie/roms/atari7800'
@@ -145,7 +145,7 @@ atari7800)
  theme='atari7800'
 ;;
 
-atari800) 
+atari800)
  name='atari800'
  fullname='Atari 800'
  path='/home/pi/RetroPie/roms/atari800'
@@ -155,7 +155,7 @@ atari800)
  theme='atari800'
 ;;
 
-atarilynx) 
+atarilynx)
  name='atarilynx'
  fullname='Atari Lynx'
  path='/home/pi/RetroPie/roms/atarilynx'
@@ -165,7 +165,7 @@ atarilynx)
  theme='atarilynx'
 ;;
 
-atarist) 
+atarist)
  name='atarist'
  fullname='Atari ST'
  path='/home/pi/RetroPie/roms/atarist'
@@ -175,7 +175,7 @@ atarist)
  theme='atarist'
 ;;
 
-c64) 
+c64)
  name='c64'
  fullname='Commodore 64'
  path='/home/pi/RetroPie/roms/c64'
@@ -185,7 +185,7 @@ c64)
  theme='c64'
 ;;
 
-coco) 
+coco)
  name='coco'
  fullname='TRS-80 Color Computer'
  path='/home/pi/RetroPie/roms/coco'
@@ -195,7 +195,7 @@ coco)
  theme='coco'
 ;;
 
-coleco) 
+coleco)
  name='coleco'
  fullname='ColecoVision'
  path='/home/pi/RetroPie/roms/coleco'
@@ -205,7 +205,7 @@ coleco)
  theme='colecovision'
 ;;
 
-dragon32) 
+dragon32)
  name='dragon32'
  fullname='Dragon 32'
  path='/home/pi/RetroPie/roms/dragon32'
@@ -215,7 +215,7 @@ dragon32)
  theme='dragon32'
 ;;
 
-dreamcast) 
+dreamcast)
  name='dreamcast'
  fullname='Dreamcast'
  path='/home/pi/RetroPie/roms/dreamcast'
@@ -225,7 +225,7 @@ dreamcast)
  theme='dreamcast'
 ;;
 
-fba) 
+fba)
  name='fba'
  fullname='Final Burn Alpha'
  path='/home/pi/RetroPie/roms/fba'
@@ -235,7 +235,7 @@ fba)
  theme='fba'
 ;;
 
-fds) 
+fds)
  name='fds'
  fullname='Famicom Disk System'
  path='/home/pi/RetroPie/roms/fds'
@@ -245,7 +245,7 @@ fds)
  theme='fds'
 ;;
 
-gameandwatch) 
+gameandwatch)
  name='gameandwatch'
  fullname='Game and Watch'
  path='/home/pi/RetroPie/roms/gameandwatch'
@@ -255,7 +255,7 @@ gameandwatch)
  theme='gameandwatch'
 ;;
 
-gamegear) 
+gamegear)
  name='gamegear'
  fullname='Sega Gamegear'
  path='/home/pi/RetroPie/roms/gamegear'
@@ -265,7 +265,7 @@ gamegear)
  theme='gamegear'
 ;;
 
-gb) 
+gb)
  name='gb'
  fullname='Game Boy'
  path='/home/pi/RetroPie/roms/gb'
@@ -275,7 +275,7 @@ gb)
  theme='gb'
 ;;
 
-gba) 
+gba)
  name='gba'
  fullname='Game Boy Advance'
  path='/home/pi/RetroPie/roms/gba'
@@ -285,7 +285,7 @@ gba)
  theme='gba'
 ;;
 
-gbc) 
+gbc)
  name='gbc'
  fullname='Game Boy Color'
  path='/home/pi/RetroPie/roms/gbc'
@@ -295,7 +295,7 @@ gbc)
  theme='gbc'
 ;;
 
-intellivision) 
+intellivision)
  name='intellivision'
  fullname='Intellivision'
  path='/home/pi/RetroPie/roms/intellivision'
@@ -305,7 +305,7 @@ intellivision)
  theme='intellivision'
 ;;
 
-macintosh) 
+macintosh)
  name='macintosh'
  fullname='Apple Macintosh'
  path='/home/pi/RetroPie/roms/macintosh'
@@ -315,7 +315,7 @@ macintosh)
  theme='macintosh'
 ;;
 
-mame-advmame) 
+mame-advmame)
  name='mame-advmame'
  fullname='Multiple Arcade Machine Emulator'
  path='/home/pi/RetroPie/roms/mame-advmame'
@@ -325,7 +325,7 @@ mame-advmame)
  theme='mame'
 ;;
 
-mame-libretro) 
+mame-libretro)
  name='mame-libretro'
  fullname='Multiple Arcade Machine Emulator'
  path='/home/pi/RetroPie/roms/mame-libretro'
@@ -335,7 +335,7 @@ mame-libretro)
  theme='mame'
 ;;
 
-mame-mame4all) 
+mame-mame4all)
  name='mame-mame4all'
  fullname='Multiple Arcade Machine Emulator'
  path='/home/pi/RetroPie/roms/mame-mame4all'
@@ -345,7 +345,7 @@ mame-mame4all)
  theme='mame'
 ;;
 
-mastersystem) 
+mastersystem)
  name='mastersystem'
  fullname='Sega Master System'
  path='/home/pi/RetroPie/roms/mastersystem'
@@ -355,7 +355,7 @@ mastersystem)
  theme='mastersystem'
 ;;
 
-megadrive) 
+megadrive)
  name='megadrive'
  fullname='Sega Mega Drive'
  path='/home/pi/RetroPie/roms/megadrive'
@@ -365,7 +365,7 @@ megadrive)
  theme='megadrive'
 ;;
 
-msx) 
+msx)
  name='msx'
  fullname='MSX'
  path='/home/pi/RetroPie/roms/msx'
@@ -375,7 +375,7 @@ msx)
  theme='msx'
 ;;
 
-n64) 
+n64)
  name='n64'
  fullname='Nintendo 64'
  path='/home/pi/RetroPie/roms/n64'
@@ -385,7 +385,7 @@ n64)
  theme='n64'
 ;;
 
-neogeo) 
+neogeo)
  name='neogeo'
  fullname='Neo Geo'
  path='/home/pi/RetroPie/roms/neogeo'
@@ -395,7 +395,7 @@ neogeo)
  theme='neogeo'
 ;;
 
-nes) 
+nes)
  name='nes'
  fullname='Nintendo Entertainment System'
  path='/home/pi/RetroPie/roms/nes'
@@ -405,7 +405,7 @@ nes)
  theme='nes'
 ;;
 
-ngp) 
+ngp)
  name='ngp'
  fullname='Neo Geo Pocket'
  path='/home/pi/RetroPie/roms/ngp'
@@ -415,7 +415,7 @@ ngp)
  theme='ngp'
 ;;
 
-ngpc) 
+ngpc)
  name='ngpc'
  fullname='Neo Geo Pocket Color'
  path='/home/pi/RetroPie/roms/ngpc'
@@ -425,7 +425,7 @@ ngpc)
  theme='ngpc'
 ;;
 
-pc) 
+pc)
  name='pc'
  fullname='PC'
  path='/home/pi/RetroPie/roms/pc'
@@ -435,7 +435,7 @@ pc)
  theme='pc'
 ;;
 
-pcengine) 
+pcengine)
  name='pcengine'
  fullname='PC Engine'
  path='/home/pi/RetroPie/roms/pcengine'
@@ -445,7 +445,7 @@ pcengine)
  theme='pcengine'
 ;;
 
-ports) 
+ports)
  name='ports'
  fullname='Ports'
  path='/home/pi/RetroPie/roms/ports'
@@ -455,7 +455,7 @@ ports)
  theme='ports'
 ;;
 
-psp) 
+psp)
  name='psp'
  fullname='PlayStation Portable'
  path='/home/pi/RetroPie/roms/psp'
@@ -465,7 +465,7 @@ psp)
  theme='psp'
 ;;
 
-psx) 
+psx)
  name='psx'
  fullname='PlayStation'
  path='/home/pi/RetroPie/roms/psx'
@@ -475,7 +475,7 @@ psx)
  theme='psx'
 ;;
 
-samcoupe) 
+samcoupe)
  name='samcoupe'
  fullname='SAM Coupe'
  path='/home/pi/RetroPie/roms/samcoupe'
@@ -485,7 +485,7 @@ samcoupe)
  theme='samcoupe'
 ;;
 
-scummvm) 
+scummvm)
  name='scummvm'
  fullname='ScummVM'
  path='/home/pi/RetroPie/roms/scummvm'
@@ -495,7 +495,7 @@ scummvm)
  theme='scummvm'
 ;;
 
-sega32x) 
+sega32x)
  name='sega32x'
  fullname='Sega 32X'
  path='/home/pi/RetroPie/roms/sega32x'
@@ -505,7 +505,7 @@ sega32x)
  theme='sega32x'
 ;;
 
-segacd) 
+segacd)
  name='segacd'
  fullname='Mega CD'
  path='/home/pi/RetroPie/roms/segacd'
@@ -515,7 +515,7 @@ segacd)
  theme='segacd'
 ;;
 
-sg-1000) 
+sg-1000)
  name='sg-1000'
  fullname='Sega SG-1000'
  path='/home/pi/RetroPie/roms/sg-1000'
@@ -525,7 +525,7 @@ sg-1000)
  theme='sg-1000'
 ;;
 
-snes) 
+snes)
  name='snes'
  fullname='Super Nintendo'
  path='/home/pi/RetroPie/roms/snes'
@@ -535,7 +535,7 @@ snes)
  theme='snes'
 ;;
 
-stratagus) 
+stratagus)
  name='stratagus'
  fullname='Stratagus Strategy Engine'
  path='/home/pi/RetroPie/roms/stratagus'
@@ -545,7 +545,7 @@ stratagus)
  theme='stratagus'
 ;;
 
-vectrex) 
+vectrex)
  name='vectrex'
  fullname='Vectrex'
  path='/home/pi/RetroPie/roms/vectrex'
@@ -555,7 +555,7 @@ vectrex)
  theme='vectrex'
 ;;
 
-videopac) 
+videopac)
  name='videopac'
  fullname='Videopac'
  path='/home/pi/RetroPie/roms/videopac'
@@ -565,7 +565,7 @@ videopac)
  theme='videopac'
 ;;
 
-virtualboy) 
+virtualboy)
  name='virtualboy'
  fullname='Virtual Boy'
  path='/home/pi/RetroPie/roms/virtualboy'
@@ -575,7 +575,7 @@ virtualboy)
  theme='virtualboy'
 ;;
 
-wonderswan) 
+wonderswan)
  name='wonderswan'
  fullname='Wonderswan'
  path='/home/pi/RetroPie/roms/wonderswan'
@@ -585,7 +585,7 @@ wonderswan)
  theme='wonderswan'
 ;;
 
-wonderswancolor) 
+wonderswancolor)
  name='wonderswancolor'
  fullname='Wonderswan Color'
  path='/home/pi/RetroPie/roms/wonderswancolor'
@@ -595,7 +595,7 @@ wonderswancolor)
  theme='wonderswancolor'
 ;;
 
-zmachine) 
+zmachine)
  name='zmachine'
  fullname='Z-machine'
  path='/home/pi/RetroPie/roms/zmachine'
@@ -605,7 +605,7 @@ zmachine)
  theme='zmachine'
 ;;
 
-zxspectrum) 
+zxspectrum)
  name='zxspectrum'
  fullname='ZX Spectrum'
  path='/home/pi/RetroPie/roms/zxspectrum'
@@ -624,7 +624,7 @@ esac
 clear
 
 #Check for custom es_systems.cfg and create backup if it exists
-if [[ -f /home/$USER/.emulationstation/es_systems.cfg ]]
+if [[ -f /home/${USER}/.emulationstation/es_systems.cfg ]]
 then
   backupES_SYSTEMS
 fi
@@ -637,11 +637,11 @@ confirmSYSTEM_LIST
 
 #Create es_systems.cfg
 clear
-echo -e "${blue}Generating ${white}\"/home/$USER/.emulationstation/es_systems.cfg\"${clear}"
-echo '<systemList>' > /home/$USER/.emulationstation/es_systems.cfg
-for system in $(echo $system_list)
+echo -e "${blue}Generating ${white}\"/home/${USER}/.emulationstation/es_systems.cfg\"${clear}"
+echo '<systemList>' > /home/${USER}/.emulationstation/es_systems.cfg
+for system in $(echo ${system_list})
 do
-echo -e "${white}$system added${clear}"
+echo -e "${white}${system} added${clear}"
 systemLINE
 echo -e "  <system>\r
     <name>${name}</name>\r
@@ -657,12 +657,12 @@ echo '</systemList>' >> /home/${USER}/.emulationstation/es_systems.cfg
 
 if [[ ${es_restore} == yes ]]
 then
-echo -e "\n${blue}/home/$USER/.emulationstation/es_systems.cfg.$backup_time.bkp${clear} has been created.\n
+echo -e "\n${blue}/home/${USER}/.emulationstation/es_systems.cfg.${backup_time}.bkp${clear} has been created.\n
 To revert changes in the future exit Emulation Station and run:\r
-${yellow}cat /home/$USER/.emulationstation/es_systems.cfg.$backup_time.bkp > /home/$USER/.emulationstation/es_systems.cfg${clear}"
+${yellow}cat /home/${USER}/.emulationstation/es_systems.cfg.${backup_time}.bkp > /home/${USER}/.emulationstation/es_systems.cfg${clear}"
 fi
 echo -e "\nTo remove ALL custom system list and revert to default run:"
-echo -e "${yellow}rm /home/$USER/.emulationstation/es_systems.cfg${clear}\n"
+echo -e "${yellow}rm /home/${USER}/.emulationstation/es_systems.cfg${clear}\n"
 echo -e "Would you like to ${red}reboot${clear} to enable the new custom systems list? [YES|NO]"
 read reboot_question
 case ${reboot_question} in
