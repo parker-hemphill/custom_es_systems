@@ -73,293 +73,544 @@ validateSYSTEM(){
 
 systemLINE(){
 case $system in
-amstradcpc)
-  name='amstradcpc'
-  fullname='Amstrad CPC'
-  path="/home/$USER/RetroPie/roms/amstradcpc"
-  extension='.cdt .cpc .dsk .zip .CDT .CPC .DSK .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ amstradcpc %ROM%'
-  platform='amstradcpc'
-  theme='amstradcpc'
+ags)
+ name='ags'
+ fullname='Adventure Game Studio'
+ path='/home/pi/RetroPie/roms/ags'
+ extension='.exe .EXE'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ ags %ROM%'
+ platform='ags'
+ theme='ags'
 ;;
-arcade)
-  name='arcade'
-  fullname='Arcade'
-  path="/home/$USER/RetroPie/roms/arcade"
-  extension='.7z .cue .fba .iso .zip .7Z .CUE .FBA .ISO .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ arcade %ROM%'
-  platform='arcade'
-  theme='arcade'
+
+amstradcpc) 
+ name='amstradcpc'
+ fullname='Amstrad CPC'
+ path='/home/pi/RetroPie/roms/amstradcpc'
+ extension='.cdt .cpc .dsk .zip .CDT .CPC .DSK .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ amstradcpc %ROM%'
+ platform='amstradcpc'
+ theme='amstradcpc'
 ;;
-atari2600)
-  name='atari2600'
-  fullname='Atari 2600'
-  path="/home/$USER/RetroPie/roms/atari2600"
-  extension='.7z .a26 .bin .rom .zip .gz .7Z .A26 .BIN .ROM .ZIP .GZ'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atari2600 %ROM%'
-  platform='atari2600'
-  theme='atari2600'
+
+apple2) 
+ name='apple2'
+ fullname='Apple II'
+ path='/home/pi/RetroPie/roms/apple2'
+ extension='.po .dsk .nib .PO .DSK .NIB'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ apple2 %ROM%'
+ platform='apple2'
+ theme='apple2'
 ;;
-atari5200)
-  name='atari5200'
-  fullname='Atari 5200'
-  path="/home/$USER/RetroPie/roms/atari5200"
-  extension='.7z .a52 .bin .car .zip .7Z .A52 .BIN .CAR .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atari5200 %ROM%'
-  platform='atari5200'
-  theme='atari5200'
+
+arcade) 
+ name='arcade'
+ fullname='Arcade'
+ path='/home/pi/RetroPie/roms/arcade'
+ extension='.7z .cue .fba .iso .zip .7Z .CUE .FBA .ISO .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ arcade %ROM%'
+ platform='arcade'
+ theme='arcade'
 ;;
-atari7800)
-  name='atari7800'
-  fullname='Atari 7800 ProSystem'
-  path="/home/$USER/RetroPie/roms/atari7800"
-  extension='.7z .a78 .bin .zip .7Z .A78 .BIN .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atari7800 %ROM%'
-  platform='atari7800'
-  theme='atari7800'
+
+atari2600) 
+ name='atari2600'
+ fullname='Atari 2600'
+ path='/home/pi/RetroPie/roms/atari2600'
+ extension='.7z .a26 .bin .rom .zip .gz .7Z .A26 .BIN .ROM .ZIP .GZ'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atari2600 %ROM%'
+ platform='atari2600'
+ theme='atari2600'
 ;;
-atari800)
-  name='atari800'
-  fullname='Atari 800'
-  path="/home/$USER/RetroPie/roms/atari800"
-  extension='.7z .atr .atr.gz .atx .bas .bin .car .cas .com .dcm .rom .xex .xfd .xfd.gz .zip .7Z .ATR .ATR.GZ .ATX .BAS .BIN .CAR .CAS .COM .DCM .ROM .XEX .XFD .XFD.GZ .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atari800 %ROM%'
-  platform='atari800'
-  theme='atari800'
+
+atari5200) 
+ name='atari5200'
+ fullname='Atari 5200'
+ path='/home/pi/RetroPie/roms/atari5200'
+ extension='.7z .a52 .bin .car .zip .7Z .A52 .BIN .CAR .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atari5200 %ROM%'
+ platform='atari5200'
+ theme='atari5200'
 ;;
-atarilynx)
-  name='atarilynx'
-  fullname='Atari Lynx'
-  path="/home/$USER/RetroPie/roms/atarilynx"
-  extension='.7z .lnx .zip .7Z .LNX .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atarilynx %ROM%'
-  platform='atarilynx'
-  theme='atarilynx'
+
+atari7800) 
+ name='atari7800'
+ fullname='Atari 7800 ProSystem'
+ path='/home/pi/RetroPie/roms/atari7800'
+ extension='.7z .a78 .bin .zip .7Z .A78 .BIN .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atari7800 %ROM%'
+ platform='atari7800'
+ theme='atari7800'
 ;;
-coleco)
-  name='coleco'
-  fullname='ColecoVision'
-  path="/home/$USER/RetroPie/roms/coleco"
-  extension='.bin .col .rom .zip .BIN .COL .ROM .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ coleco %ROM%'
-  platform='colecovision'
-  theme='colecovision'
+
+atari800) 
+ name='atari800'
+ fullname='Atari 800'
+ path='/home/pi/RetroPie/roms/atari800'
+ extension='.7z .atr .atr.gz .atx .bas .bin .car .cas .com .dcm .rom .xex .xfd .xfd.gz .zip .7Z .ATR .ATR.GZ .ATX .BAS .BIN .CAR .CAS .COM .DCM .ROM .XEX .XFD .XFD.GZ .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atari800 %ROM%'
+ platform='atari800'
+ theme='atari800'
 ;;
-fba)
-  name='fba'
-  fullname='Final Burn Alpha'
-  path="/home/$USER/RetroPie/roms/fba"
-  extension='.7z .cue .fba .iso .zip .7Z .CUE .FBA .ISO .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ fba %ROM%'
-  platform='arcade'
-  theme='fba'
+
+atarilynx) 
+ name='atarilynx'
+ fullname='Atari Lynx'
+ path='/home/pi/RetroPie/roms/atarilynx'
+ extension='.7z .lnx .zip .7Z .LNX .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atarilynx %ROM%'
+ platform='atarilynx'
+ theme='atarilynx'
 ;;
-fds)
-  name='fds'
-  fullname='Famicom Disk System'
-  path="/home/$USER/RetroPie/roms/fds"
-  extension='.7z .nes .fds .zip .7Z .NES .FDS .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ fds %ROM%'
-  platform='fds'
-  theme='fds'
+
+atarist) 
+ name='atarist'
+ fullname='Atari ST'
+ path='/home/pi/RetroPie/roms/atarist'
+ extension='.st .stx .img .rom .raw .ipf .ctr .zip .ST .STX .IMG .ROM .RAW .IPF .CTR .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ atarist %ROM%'
+ platform='atarist'
+ theme='atarist'
 ;;
-gamegear)
-  name='gamegear'
-  fullname='Sega Gamegear'
-  path="/home/$USER/RetroPie/roms/gamegear"
-  extension='.7z .gg .bin .sms .zip .7Z .GG .BIN .SMS .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ gamegear %ROM%'
-  platform='gamegear'
-  theme='gamegear'
+
+c64) 
+ name='c64'
+ fullname='Commodore 64'
+ path='/home/pi/RetroPie/roms/c64'
+ extension='.crt .d64 .g64 .prg .t64 .tap .x64 .zip .vsf .CRT .D64 .G64 .PRG .T64 .TAP .X64 .ZIP .VSF'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ c64 %ROM%'
+ platform='c64'
+ theme='c64'
 ;;
-gb)
-  name='gb'
-  fullname='Game Boy'
-  path="/home/$USER/RetroPie/roms/gb"
-  extension='.7z .gb .zip .7Z .GB .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ gb %ROM%'
-  platform='gb'
-  theme='gb'
+
+coco) 
+ name='coco'
+ fullname='TRS-80 Color Computer'
+ path='/home/pi/RetroPie/roms/coco'
+ extension='.cas .wav .bas .asc .dmk .jvc .os9 .dsk .vdk .rom .ccc .sna .CAS .WAV .BAS .ASC .DMK .JVC .OS9 .DSK .VDK .ROM .CCC .SNA'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ coco %ROM%'
+ platform='coco'
+ theme='coco'
 ;;
-gba)
-  name='gba'
-  fullname='Game Boy Advance'
-  path="/home/$USER/RetroPie/roms/gba"
-  extension='.7z .gba .zip .7Z .GBA .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ gba %ROM%'
-  platform='gba'
-  theme='gba'
+
+coleco) 
+ name='coleco'
+ fullname='ColecoVision'
+ path='/home/pi/RetroPie/roms/coleco'
+ extension='.bin .col .rom .zip .BIN .COL .ROM .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ coleco %ROM%'
+ platform='colecovision'
+ theme='colecovision'
 ;;
-gbc)
-  name='gbc'
-  fullname='Game Boy Color'
-  path="/home/$USER/RetroPie/roms/gbc"
-  extension='.7z .gbc .zip .7Z .GBC .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ gbc %ROM%'
-  platform='gbc'
-  theme='gbc'
+
+dragon32) 
+ name='dragon32'
+ fullname='Dragon 32'
+ path='/home/pi/RetroPie/roms/dragon32'
+ extension='.cas .wav .bas .asc .dmk .jvc .os9 .dsk .vdk .rom .ccc .sna .CAS .WAV .BAS .ASC .DMK .JVC .OS9 .DSK .VDK .ROM .CCC .SNA'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ dragon32 %ROM%'
+ platform='dragon32'
+ theme='dragon32'
 ;;
-mame-libretro)
-  name='mame-libretro'
-  fullname='Multiple Arcade Machine Emulator'
-  path="/home/$USER/RetroPie/roms/mame-libretro"
-  extension='.zip .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ mame-libretro %ROM%'
-  platform='arcade'
-  theme='mame'
+
+dreamcast) 
+ name='dreamcast'
+ fullname='Dreamcast'
+ path='/home/pi/RetroPie/roms/dreamcast'
+ extension='.cdi .chd .cue .gdi .sh .zip .CDI .CHD .CUE .GDI .SH .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ dreamcast %ROM%'
+ platform='dreamcast'
+ theme='dreamcast'
 ;;
-mastersystem)
-  name='mastersystem'
-  fullname='Sega Master System'
-  path="/home/$USER/RetroPie/roms/mastersystem"
-  extension='.7z .sms .bin .zip .7Z .SMS .BIN .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ mastersystem %ROM%'
-  platform='mastersystem'
-  theme='mastersystem'
+
+fba) 
+ name='fba'
+ fullname='Final Burn Alpha'
+ path='/home/pi/RetroPie/roms/fba'
+ extension='.7z .cue .fba .iso .zip .7Z .CUE .FBA .ISO .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ fba %ROM%'
+ platform='arcade'
+ theme='fba'
 ;;
-megadrive)
-  name='megadrive'
-  fullname='Sega Mega Drive'
-  path="/home/$USER/RetroPie/roms/megadrive"
-  extension='.7z .smd .bin .gen .md .sg .zip .7Z .SMD .BIN .GEN .MD .SG .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ megadrive %ROM%'
-  platform='megadrive'
-  theme='megadrive'
+
+fds) 
+ name='fds'
+ fullname='Famicom Disk System'
+ path='/home/pi/RetroPie/roms/fds'
+ extension='.7z .nes .fds .zip .7Z .NES .FDS .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ fds %ROM%'
+ platform='fds'
+ theme='fds'
 ;;
-msx)
-  name='msx'
-  fullname='MSX'
-  path="/home/$USER/RetroPie/roms/msx"
-  extension='.rom .mx1 .mx2 .col .dsk .zip .m3u .ROM .MX1 .MX2 .COL .DSK .ZIP .M3U'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ msx %ROM%'
-  platform='msx'
-  theme='msx'
+
+gameandwatch) 
+ name='gameandwatch'
+ fullname='Game and Watch'
+ path='/home/pi/RetroPie/roms/gameandwatch'
+ extension='.mgw .MGW'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ gameandwatch %ROM%'
+ platform='gameandwatch'
+ theme='gameandwatch'
 ;;
-n64)
-  name='n64'
-  fullname='Nintendo 64'
-  path="/home/$USER/RetroPie/roms/n64"
-  extension='.z64 .n64 .v64 .zip .Z64 .N64 .V64 .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ n64 %ROM%'
-  platform='n64'
-  theme='n64'
+
+gamegear) 
+ name='gamegear'
+ fullname='Sega Gamegear'
+ path='/home/pi/RetroPie/roms/gamegear'
+ extension='.7z .gg .bin .sms .zip .7Z .GG .BIN .SMS .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ gamegear %ROM%'
+ platform='gamegear'
+ theme='gamegear'
 ;;
-neogeo)
-  name='neogeo'
-  fullname='Neo Geo'
-  path="/home/$USER/RetroPie/roms/neogeo"
-  extension='.7z .cue .fba .iso .zip .7Z .CUE .FBA .ISO .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ neogeo %ROM%'
-  platform='neogeo'
-  theme='neogeo'
+
+gb) 
+ name='gb'
+ fullname='Game Boy'
+ path='/home/pi/RetroPie/roms/gb'
+ extension='.7z .gb .zip .7Z .GB .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ gb %ROM%'
+ platform='gb'
+ theme='gb'
 ;;
-nes)
-  name='nes'
-  fullname='Nintendo Entertainment System'
-  path="/home/$USER/RetroPie/roms/nes"
-  extension='.7z .nes .zip .7Z .NES .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ nes %ROM%'
-  platform='nes'
-  theme='nes'
+
+gba) 
+ name='gba'
+ fullname='Game Boy Advance'
+ path='/home/pi/RetroPie/roms/gba'
+ extension='.7z .gba .zip .7Z .GBA .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ gba %ROM%'
+ platform='gba'
+ theme='gba'
 ;;
-ngp)
-  name='ngp'
-  fullname='Neo Geo Pocket'
-  path="/home/$USER/RetroPie/roms/ngp"
-  extension='.7z .ngp .zip .7Z .NGP .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ ngp %ROM%'
-  platform='ngp'
-  theme='ngp'
+
+gbc) 
+ name='gbc'
+ fullname='Game Boy Color'
+ path='/home/pi/RetroPie/roms/gbc'
+ extension='.7z .gbc .zip .7Z .GBC .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ gbc %ROM%'
+ platform='gbc'
+ theme='gbc'
 ;;
-ngpc)
-  name='ngpc'
-  fullname='Neo Geo Pocket Color'
-  path="/home/$USER/RetroPie/roms/ngpc"
-  extension='.7z .ngc .zip .7Z .NGC .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ ngpc %ROM%'
-  platform='ngpc'
-  theme='ngpc'
+
+intellivision) 
+ name='intellivision'
+ fullname='Intellivision'
+ path='/home/pi/RetroPie/roms/intellivision'
+ extension='.7z .bin .int .itv .rom .zip .7Z .BIN .INT .ITV .ROM .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ intellivision %ROM%'
+ platform='intellivision'
+ theme='intellivision'
 ;;
-pcengine)
-  name='pcengine'
-  fullname='PC Engine'
-  path="/home/$USER/RetroPie/roms/pcengine"
-  extension='.7z .pce .ccd .chd .cue .zip .7Z .PCE .CCD .CHD .CUE .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ pcengine %ROM%'
-  platform='pcengine'
-  theme='pcengine'
+
+macintosh) 
+ name='macintosh'
+ fullname='Apple Macintosh'
+ path='/home/pi/RetroPie/roms/macintosh'
+ extension='.txt .dsk .TXT .DSK'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ macintosh %ROM%'
+ platform='macintosh'
+ theme='macintosh'
 ;;
-psx)
-  name='psx'
-  fullname='PlayStation'
-  path="/home/$USER/RetroPie/roms/psx"
-  extension='.cue .cbn .chd .img .iso .m3u .mdf .pbp .toc .z .znx .CUE .CBN .CHD .IMG .ISO .M3U .MDF .PBP .TOC .Z .ZNX'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ psx %ROM%'
-  platform='psx'
-  theme='psx'
+
+mame-advmame) 
+ name='mame-advmame'
+ fullname='Multiple Arcade Machine Emulator'
+ path='/home/pi/RetroPie/roms/mame-advmame'
+ extension='.zip .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ mame-advmame %ROM%'
+ platform='arcade'
+ theme='mame'
 ;;
-retropie)
-  name='retropie'
-  fullname='RetroPie'
-  path="/home/$USER/RetroPie/retropiemenu"
-  extension='.rp .sh'
-  command='sudo /home/pi/RetroPie-Setup/retropie_packages.sh retropiemenu launch %ROM% &lt;/dev/tty &gt;/dev/tty'
-  platform=''
-  theme='retropie'
+
+mame-libretro) 
+ name='mame-libretro'
+ fullname='Multiple Arcade Machine Emulator'
+ path='/home/pi/RetroPie/roms/mame-libretro'
+ extension='.zip .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ mame-libretro %ROM%'
+ platform='arcade'
+ theme='mame'
 ;;
-sega32x)
-  name='sega32x'
-  fullname='Sega 32X'
-  path="/home/$USER/RetroPie/roms/sega32x"
-  extension='.7z .32x .smd .bin .md .zip .7Z .32X .SMD .BIN .MD .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ sega32x %ROM%'
-  platform='sega32x'
-  theme='sega32x'
+
+mame-mame4all) 
+ name='mame-mame4all'
+ fullname='Multiple Arcade Machine Emulator'
+ path='/home/pi/RetroPie/roms/mame-mame4all'
+ extension='.zip .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ mame-mame4all %ROM%'
+ platform='arcade'
+ theme='mame'
 ;;
-segacd)
-  name='segacd'
-  fullname='Mega CD'
-  path="/home/$USER/RetroPie/roms/segacd"
-  extension='.iso .cue .chd .ISO .CUE .CHD'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ segacd %ROM%'
-  platform='segacd'
-  theme='segacd'
+
+mastersystem) 
+ name='mastersystem'
+ fullname='Sega Master System'
+ path='/home/pi/RetroPie/roms/mastersystem'
+ extension='.7z .sms .bin .zip .7Z .SMS .BIN .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ mastersystem %ROM%'
+ platform='mastersystem'
+ theme='mastersystem'
 ;;
-sg-1000)
-  name='sg-1000'
-  fullname='Sega SG-1000'
-  path="/home/$USER/RetroPie/roms/sg-1000"
-  extension='.7z .sg .bin .zip .7Z .SG .BIN .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ sg-1000 %ROM%'
-  platform='sg-1000'
-  theme='sg-1000'
+
+megadrive) 
+ name='megadrive'
+ fullname='Sega Mega Drive'
+ path='/home/pi/RetroPie/roms/megadrive'
+ extension='.7z .smd .bin .gen .md .sg .zip .7Z .SMD .BIN .GEN .MD .SG .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ megadrive %ROM%'
+ platform='megadrive'
+ theme='megadrive'
 ;;
-snes)
-  name='snes'
-  fullname='Super Nintendo'
-  path="/home/$USER/RetroPie/roms/snes"
-  extension='.7z .bin .bs .smc .sfc .fig .swc .mgd .zip .7Z .BIN .BS .SMC .SFC .FIG .SWC .MGD .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes %ROM%'
-  platform='snes'
-  theme='snes'
+
+msx) 
+ name='msx'
+ fullname='MSX'
+ path='/home/pi/RetroPie/roms/msx'
+ extension='.rom .mx1 .mx2 .col .dsk .zip .m3u .ROM .MX1 .MX2 .COL .DSK .ZIP .M3U'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ msx %ROM%'
+ platform='msx'
+ theme='msx'
 ;;
-vectrex)
-  name='vectrex'
-  fullname='Vectrex'
-  path="/home/$USER/RetroPie/roms/vectrex"
-  extension='.7z .vec .gam .bin .zip .7Z .VEC .GAM .BIN .ZIP'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ vectrex %ROM%'
-  platform='vectrex'
-  theme='vectrex'
+
+n64) 
+ name='n64'
+ fullname='Nintendo 64'
+ path='/home/pi/RetroPie/roms/n64'
+ extension='.z64 .n64 .v64 .zip .Z64 .N64 .V64 .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ n64 %ROM%'
+ platform='n64'
+ theme='n64'
 ;;
-zxspectrum)
-  name='zxspectrum'
-  fullname='ZX Spectrum'
-  path="/home/$USER/RetroPie/roms/zxspectrum"
-  extension='.7z .sh .sna .szx .z80 .tap .tzx .gz .udi .mgt .img .trd .scl .dsk .zip .rzx .7Z .SH .SNA .SZX .Z80 .TAP .TZX .GZ .UDI .MGT .IMG .TRD .SCL .DSK .ZIP .RZX'
-  command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ zxspectrum %ROM%'
-  platform='zxspectrum'
-  theme='zxspectrum'
+
+neogeo) 
+ name='neogeo'
+ fullname='Neo Geo'
+ path='/home/pi/RetroPie/roms/neogeo'
+ extension='.7z .chd .cue .fba .iso .zip .7Z .CHD .CUE .FBA .ISO .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ neogeo %ROM%'
+ platform='neogeo'
+ theme='neogeo'
+;;
+
+nes) 
+ name='nes'
+ fullname='Nintendo Entertainment System'
+ path='/home/pi/RetroPie/roms/nes'
+ extension='.7z .nes .zip .7Z .NES .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ nes %ROM%'
+ platform='nes'
+ theme='nes'
+;;
+
+ngp) 
+ name='ngp'
+ fullname='Neo Geo Pocket'
+ path='/home/pi/RetroPie/roms/ngp'
+ extension='.7z .ngp .zip .7Z .NGP .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ ngp %ROM%'
+ platform='ngp'
+ theme='ngp'
+;;
+
+ngpc) 
+ name='ngpc'
+ fullname='Neo Geo Pocket Color'
+ path='/home/pi/RetroPie/roms/ngpc'
+ extension='.7z .ngc .zip .7Z .NGC .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ ngpc %ROM%'
+ platform='ngpc'
+ theme='ngpc'
+;;
+
+pc) 
+ name='pc'
+ fullname='PC'
+ path='/home/pi/RetroPie/roms/pc'
+ extension='.bat .com .exe .sh .conf .BAT .COM .EXE .SH .CONF'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ pc %ROM%'
+ platform='pc'
+ theme='pc'
+;;
+
+pcengine) 
+ name='pcengine'
+ fullname='PC Engine'
+ path='/home/pi/RetroPie/roms/pcengine'
+ extension='.7z .pce .ccd .chd .cue .zip .7Z .PCE .CCD .CHD .CUE .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ pcengine %ROM%'
+ platform='pcengine'
+ theme='pcengine'
+;;
+
+ports) 
+ name='ports'
+ fullname='Ports'
+ path='/home/pi/RetroPie/roms/ports'
+ extension='.sh .SH'
+ command='bash %ROM%'
+ platform='pc'
+ theme='ports'
+;;
+
+psp) 
+ name='psp'
+ fullname='PlayStation Portable'
+ path='/home/pi/RetroPie/roms/psp'
+ extension='.iso .pbp .cso .ISO .PBP .CSO'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ psp %ROM%'
+ platform='psp'
+ theme='psp'
+;;
+
+psx) 
+ name='psx'
+ fullname='PlayStation'
+ path='/home/pi/RetroPie/roms/psx'
+ extension='.cue .cbn .chd .img .iso .m3u .mdf .pbp .toc .z .znx .CUE .CBN .CHD .IMG .ISO .M3U .MDF .PBP .TOC .Z .ZNX'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ psx %ROM%'
+ platform='psx'
+ theme='psx'
+;;
+
+samcoupe) 
+ name='samcoupe'
+ fullname='SAM Coupe'
+ path='/home/pi/RetroPie/roms/samcoupe'
+ extension='.dsk .mgt .sbt .sad .DSK .MGT .SBT .SAD'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ samcoupe %ROM%'
+ platform='samcoupe'
+ theme='samcoupe'
+;;
+
+scummvm) 
+ name='scummvm'
+ fullname='ScummVM'
+ path='/home/pi/RetroPie/roms/scummvm'
+ extension='.sh .svm .SH .SVM'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ scummvm %ROM%'
+ platform='scummvm'
+ theme='scummvm'
+;;
+
+sega32x) 
+ name='sega32x'
+ fullname='Sega 32X'
+ path='/home/pi/RetroPie/roms/sega32x'
+ extension='.7z .32x .smd .bin .md .zip .7Z .32X .SMD .BIN .MD .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ sega32x %ROM%'
+ platform='sega32x'
+ theme='sega32x'
+;;
+
+segacd) 
+ name='segacd'
+ fullname='Mega CD'
+ path='/home/pi/RetroPie/roms/segacd'
+ extension='.iso .cue .chd .ISO .CUE .CHD'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ segacd %ROM%'
+ platform='segacd'
+ theme='segacd'
+;;
+
+sg-1000) 
+ name='sg-1000'
+ fullname='Sega SG-1000'
+ path='/home/pi/RetroPie/roms/sg-1000'
+ extension='.7z .sg .bin .zip .7Z .SG .BIN .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ sg-1000 %ROM%'
+ platform='sg-1000'
+ theme='sg-1000'
+;;
+
+snes) 
+ name='snes'
+ fullname='Super Nintendo'
+ path='/home/pi/RetroPie/roms/snes'
+ extension='.7z .bin .bs .smc .sfc .fig .swc .mgd .zip .7Z .BIN .BS .SMC .SFC .FIG .SWC .MGD .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes %ROM%'
+ platform='snes'
+ theme='snes'
+;;
+
+stratagus) 
+ name='stratagus'
+ fullname='Stratagus Strategy Engine'
+ path='/home/pi/RetroPie/roms/stratagus'
+ extension='.wc1 .wc2 .sc .data  .WC1 .WC2 .SC .DATA '
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ stratagus %ROM%'
+ platform='stratagus'
+ theme='stratagus'
+;;
+
+vectrex) 
+ name='vectrex'
+ fullname='Vectrex'
+ path='/home/pi/RetroPie/roms/vectrex'
+ extension='.7z .vec .gam .bin .zip .7Z .VEC .GAM .BIN .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ vectrex %ROM%'
+ platform='vectrex'
+ theme='vectrex'
+;;
+
+videopac) 
+ name='videopac'
+ fullname='Videopac'
+ path='/home/pi/RetroPie/roms/videopac'
+ extension='.7z .bin .zip .7Z .BIN .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ videopac %ROM%'
+ platform='videopac'
+ theme='videopac'
+;;
+
+virtualboy) 
+ name='virtualboy'
+ fullname='Virtual Boy'
+ path='/home/pi/RetroPie/roms/virtualboy'
+ extension='.7z .vb .zip .7Z .VB .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ virtualboy %ROM%'
+ platform='virtualboy'
+ theme='virtualboy'
+;;
+
+wonderswan) 
+ name='wonderswan'
+ fullname='Wonderswan'
+ path='/home/pi/RetroPie/roms/wonderswan'
+ extension='.7z .ws .zip .7Z .WS .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ wonderswan %ROM%'
+ platform='wonderswan'
+ theme='wonderswan'
+;;
+
+wonderswancolor) 
+ name='wonderswancolor'
+ fullname='Wonderswan Color'
+ path='/home/pi/RetroPie/roms/wonderswancolor'
+ extension='.7z .wsc .zip .7Z .WSC .ZIP'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ wonderswancolor %ROM%'
+ platform='wonderswancolor'
+ theme='wonderswancolor'
+;;
+
+zmachine) 
+ name='zmachine'
+ fullname='Z-machine'
+ path='/home/pi/RetroPie/roms/zmachine'
+ extension='.dat .zip .z1 .z2 .z3 .z4 .z5 .z6 .z7 .z8 .DAT .ZIP .Z1 .Z2 .Z3 .Z4 .Z5 .Z6 .Z7 .Z8'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ zmachine %ROM%'
+ platform='zmachine'
+ theme='zmachine'
+;;
+
+zxspectrum) 
+ name='zxspectrum'
+ fullname='ZX Spectrum'
+ path='/home/pi/RetroPie/roms/zxspectrum'
+ extension='.7z .sh .sna .szx .z80 .tap .tzx .gz .udi .mgt .img .trd .scl .dsk .zip .rzx .7Z .SH .SNA .SZX .Z80 .TAP .TZX .GZ .UDI .MGT .IMG .TRD .SCL .DSK .ZIP .RZX'
+ command='/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ zxspectrum %ROM%'
+ platform='zxspectrum'
+ theme='zxspectrum'
 ;;
 esac
 }
@@ -391,18 +642,18 @@ do
 echo -e "${white}$system added${clear}"
 systemLINE
 echo -e "  <system>\r
-    <name>$name</name>\r
-    <fullname>$fullname</fullname>\r
-    <path>$path</path>\r
-    <extension>$extension</extension>\r
-    <command>$command</command>\r
-    <platform>$platform</platform>\r
-    <theme>$theme</theme>\r
-  </system>" >> /home/$USER/.emulationstation/es_systems.cfg
+    <name>${name}</name>\r
+    <fullname>${fullname}</fullname>\r
+    <path>${path}</path>\r
+    <extension>${extension}</extension>\r
+    <command>${command}</command>\r
+    <platform>${platform}</platform>\r
+    <theme>${theme}</theme>\r
+  </system>" >> /home/${USER}/.emulationstation/es_systems.cfg
 done
-echo '</systemList>' >> /home/$USER/.emulationstation/es_systems.cfg
+echo '</systemList>' >> /home/${USER}/.emulationstation/es_systems.cfg
 
-if [[ $es_restore == yes ]]
+if [[ ${es_restore} == yes ]]
 then
 echo -e "\n${blue}/home/$USER/.emulationstation/es_systems.cfg.$backup_time.bkp${clear} has been created.\n
 To revert changes in the future exit Emulation Station and run:\r
@@ -412,7 +663,7 @@ echo -e "\nTo remove ALL custom system list and revert to default run:"
 echo -e "${yellow}rm /home/$USER/.emulationstation/es_systems.cfg${clear}\n"
 echo -e "Would you like to ${red}reboot${clear} to enable the new custom systems list? [YES|NO]"
 read reboot_question
-case $reboot_question in
+case ${reboot_question} in
   y|Y|yes|Yes|YES)
     sudo reboot
   ;;
