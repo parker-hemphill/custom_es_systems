@@ -7,7 +7,7 @@
 
 backup_time=$(date +%m-%d-%y_%H-%M) #Custom time used to create es_systems.cfg backup file
 es_restore=no #Set to yes if es_systems backup is created.  Used so script knows if there is a file to restore on error
-full_list="|$(grep '<name>' /etc/emulationstation/es_systems.cfg|sed -e 's/    <name>//g' -e 's/<\/name>//g'|tr "\n" "|")" #List of valid systems installed in RetroPie
+for LIST in /home/$USER/RetroPie/roms/*; do if [ -d "${LIST}" ]; then if [ ! -L "${LIST}" ]; then full_list="${LIST##*/}|${full_list}";fi; fi; done
 
 #Set colors for status message
 red='\e[1;31m'
