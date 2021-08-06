@@ -10,7 +10,7 @@ declare -r red='\e[1;31m'
 declare -r blue='\e[1;34m'
 declare -r white='\e[1;97m'
 declare -r yellow='\e[1;33m'
-declare -r declare -r clear='\e[0m'
+declare -r clear='\e[0m'
 
 ok(){
   printf "${white}[+] ${1}${clear}\n"
@@ -639,8 +639,7 @@ choose_options(){
       echo '</systemList>' >> /home/${USER}/.emulationstation/es_systems.cfg
     ;;
     q)
-      printf "No changes have been made"
-      printf "To run again please enter ${blue}${0}${clear} and hit return\n"
+      printf "\nNo changes have been made.  To run again please enter ${blue}${0}${clear} and hit return.\n\n"
       sleep 1
       exit 0
     ;;
@@ -700,7 +699,7 @@ create_custom_list(){
 }
 
 reboot_or_exit(){
-  ok "New es_systems.cfg generated.  Do you want to exit script or reboot system?\nChoose 'R' to reboot or any other key to exit"
+  ok "New es_systems.cfg generated.  Do you want to exit script or reboot system?\n\nChoose 'R' to reboot or any other key to exit"
   read reboot_answer
   case ${reboot_answer} in
     R)
@@ -713,6 +712,10 @@ reboot_or_exit(){
 }
 
 main(){
+  clear
+  if [[ $(whoami) == 'root' ]]; then
+    die "This script should be ran as normal user, NOT root\nPlease run ${blue}${0}${red} as normal user"
+  fi
   setup_custom_file
   choose_options
   reboot_or_exit
